@@ -36,7 +36,7 @@ const TourismSection = () => {
   };
 
   return (
-    <div className="py-20 px-5 bg-gradient-to-br from-[#FCFAF8] via-white to-[#F5F0E8] relative overflow-hidden">
+    <div className="py-20 px-5 bg-linear-to-br from-[#FCFAF8] via-white to-[#F5F0E8] relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-[rgb(33,64,48)]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-[rgb(33,64,48)]/5 rounded-full blur-3xl" />
@@ -79,7 +79,7 @@ const TourismSection = () => {
             >
               {/* Image container with gradient overlay */}
               <div className="relative h-64 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent z-10" />
                 <img
                   src={place.image}
                   alt={place.name}
@@ -110,7 +110,7 @@ const TourismSection = () => {
                     {place.highlights.map((highlight, idx) => (
                       <span
                         key={idx}
-                        className="px-4 py-2 bg-gradient-to-r from-[rgb(33,64,48)]/10 to-[rgb(33,64,48)]/5 text-[rgb(33,64,48)] text-sm font-medium rounded-xl border border-[rgb(33,64,48)]/10 hover:border-[rgb(33,64,48)]/30 transition-colors"
+                        className="px-4 py-2 bg-linear-to-r from-[rgb(33,64,48)]/10 to-[rgb(33,64,48)]/5 text-[rgb(33,64,48)] text-sm font-medium rounded-xl border border-[rgb(33,64,48)]/10 hover:border-[rgb(33,64,48)]/30 transition-colors"
                       >
                         {highlight}
                       </span>
@@ -120,7 +120,7 @@ const TourismSection = () => {
               </div>
 
               {/* Hover effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgb(33,64,48)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-t from-[rgb(33,64,48)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </motion.div>
           ))}
         </div>
@@ -137,7 +137,7 @@ const TourismSection = () => {
             onClick={handleViewMore}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="group px-8 py-4 flex items-center justify-center gap-3 bg-gradient-to-r from-[rgb(33,64,48)] to-[rgb(45,80,60)] text-white rounded-2xl hover:from-[rgb(45,80,60)] hover:to-[rgb(33,64,48)] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl w-full sm:w-auto"
+            className="group px-8 py-4 flex items-center justify-center gap-3 bg-linear-to-r from-[rgb(33,64,48)] to-[rgb(45,80,60)] text-white rounded-2xl hover:from-[rgb(45,80,60)] hover:to-[rgb(33,64,48)] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl w-full sm:w-auto"
           >
             View More Destinations 
             <AiOutlineArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
