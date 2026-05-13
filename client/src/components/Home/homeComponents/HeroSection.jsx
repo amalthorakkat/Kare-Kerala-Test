@@ -69,7 +69,7 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="playfair text-[40px] md:text-[60px] lg:text-[72px] leading-[110%] lg:leading-[120%] font-bold"
           >
-            Global Gateway to <span className="text-[#1B6498]">Healing</span>
+            Global Gateway to <span className="text-[rgb(33,64,48)]">Healing</span>
             <br /> in Kerala
           </motion.h1>
 
@@ -95,10 +95,10 @@ const Hero = () => {
             onClick={() => scrollToSection("contact")}
             className="
       px-7 py-3 rounded-[10px] font-medium w-full sm:w-auto
-      bg-[#1B6498] text-white border border-[#1B6498]
+      bg-[rgb(33,64,48)] text-white border border-[rgb(33,64,48)]
       transition-all duration-300 ease-out
       hover:bg-black/30 hover:backdrop-blur hover:text-white
-      hover:border-[#1B6498] hover:shadow-lg hover:scale-[1.03] cursor-pointer
+      hover:border-[rgb(33,64,48)] hover:shadow-lg hover:scale-[1.03] cursor-pointer
     "
           >
             Start Your Journey
@@ -109,10 +109,10 @@ const Hero = () => {
             onClick={() => scrollToSection("services")}
             className="
       px-7 py-3 rounded-[10px] font-medium w-full sm:w-auto
-      border border-[#1B6498] bg-black/30 backdrop-blur text-white
+      border border-[rgb(33,64,48)] bg-black/30 backdrop-blur text-white
       transition-all duration-300 ease-out
-      hover:bg-[#1B6498] hover:text-white
-      hover:border-[#1B6498] hover:shadow-lg hover:scale-[1.03] cursor-pointer
+      hover:bg-[rgb(33,64,48)] hover:text-white
+      hover:border-[rgb(33,64,48)] hover:shadow-lg hover:scale-[1.03] cursor-pointer
     "
           >
             Explore Services

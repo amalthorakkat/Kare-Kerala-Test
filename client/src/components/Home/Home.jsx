@@ -6,6 +6,7 @@ import Services from "./homeComponents/Services";
 import WhyKerala from "./homeComponents/WhyKerala";
 import OurPromise from "./homeComponents/OurPromise";
 import OurDoctors from "./homeComponents/OurDoctors";
+import TourismSection from "./homeComponents/TourismSection";
 import Contact from "./homeComponents/Contact";
 
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
       <div id="doctors">
         <OurDoctors />
       </div>
+      <TourismSection />
       <div id="contact">
         <Contact />
       </div>

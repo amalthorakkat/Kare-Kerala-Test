@@ -119,7 +119,7 @@ const Contact = () => {
               <div className="flex justify-end pt-4">
                 <button
                   type="button"
-                  className="bg-[#1B6498] text-white px-8 py-3.5 rounded-xl font-medium flex items-center gap-2 hover:bg-[#154a72] active:scale-95 transition-all duration-200 shadow-lg hover:shadow-xl"
+                  className="bg-[rgb(33,64,48)] text-white px-8 py-3.5 rounded-xl font-medium flex items-center gap-2 hover:bg-[rgb(25,50,38)] active:scale-95 transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
                   Submit <FaArrowRight />
                 </button>
