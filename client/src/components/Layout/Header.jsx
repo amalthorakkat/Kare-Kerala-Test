@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import KareKeralaLogo from "../../assets/images/websiteLogo/KareKeralaLogo.svg";
 import { FiPhone, FiMenu, FiX } from "react-icons/fi";
 import { animateMenuToggle } from "../../animations/menuAnimations";
@@ -16,6 +16,8 @@ const Header = () => {
   const closeRef = useRef(null);
 
   const navLinks = ["Home", "About Us", "Services", "Why Kerala", "Doctors", "Tourism"];
+
+  const { pathname } = useLocation();
 
   const handleNavClick = (linkName) => {
     // Handle Tourism navigation separately
@@ -36,9 +38,20 @@ const Header = () => {
 
     const id = idMap[linkName];
     if (id) {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+      if (pathname !== "/") {
+        navigate("/");
+        // Use a slight delay to allow the Home component to render before scrolling
+        setTimeout(() => {
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
       }
     }
   };

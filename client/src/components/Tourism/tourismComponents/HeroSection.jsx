@@ -2,15 +2,15 @@ import { useState, useEffect, useRef } from "react";
 
 /* ─────────────────────────── design tokens ─────────────────────────── */
 const tokens = {
-  primary: "#061b0e",
+  primary: "#214030",
   primaryContainer: "#1b3022",
   onPrimary: "#ffffff",
   secondary: "#36693e",
   secondaryFixed: "#b7f1ba",
-  background: "#f8f9fa",
-  surface: "#f8f9fa",
-  onSurface: "#191c1d",
-  onSurfaceVariant: "#434843",
+  background: "#FCFAF8",
+  surface: "#FCFAF8",
+  onSurface: "#214030",
+  onSurfaceVariant: "#4A5D52",
   outlineVariant: "#c3c8c1",
   outline: "#737973",
 };
@@ -73,7 +73,6 @@ const DESTINATIONS = [
   },
 ];
 
-const NAV_LINKS = ["Home", "About Us", "Services", "Why Kerala", "Doctors", "Tourism"];
 
 const HERO_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuASkpDzGVHkzMnxvP3BiyWklibBA9HH1aC2CmqHLFLw7PCEMBHpTbvBbpOnL9TxK3OWjwXX30PYx7gtxSGpPIlJmLyeyI1Yj4QpKU6bHjbmnut3LZEPqZXCQzbXz4Zejm2GD6b0bmds-6Yt6A8zVyxMLqIMqy7rzLtYeapEjCePGkP-e_T5gYAFGuMiF9Wc3xzPvF2tmNQs3n7r-laSV5wsAOW0g9YCT5PN1GGKvnkdegQ--U4GMeH7Xk1NQVYzKF_n8bZLqbNgHN0";
@@ -84,8 +83,8 @@ function CheckIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"
       style={{ flexShrink: 0, marginTop: 2 }}>
-      <circle cx="12" cy="12" r="11" stroke="#b7f1ba" strokeWidth="1.5" />
-      <path d="M7.5 12.5l3 3 5.5-6" stroke="#b7f1ba" strokeWidth="1.8"
+      <circle cx="12" cy="12" r="11" stroke={tokens.secondaryFixed} strokeWidth="1.5" />
+      <path d="M7.5 12.5l3 3 5.5-6" stroke={tokens.secondaryFixed} strokeWidth="1.8"
         strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -100,11 +99,11 @@ function GlassPanel({ title, items, side }) {
       position: "absolute", ...pos,
       maxWidth: 320, borderRadius: "1.5rem",
       padding: "2rem",
-      background: "rgba(6,27,14,0.42)",
+      background: "rgba(33,64,48,0.42)",
       backdropFilter: "blur(20px)",
       WebkitBackdropFilter: "blur(20px)",
       border: "1px solid rgba(255,255,255,0.15)",
-      boxShadow: "0 8px 32px rgba(6,27,14,0.3)",
+      boxShadow: "0 8px 32px rgba(33,64,48,0.3)",
       color: "#fff",
     }}>
       <h4 style={{
@@ -161,7 +160,7 @@ function DestinationSection({ dest }) {
           height: "clamp(300px, 60vh, 640px)",
           borderRadius: "1.5rem",
           overflow: "hidden",
-          boxShadow: "0 20px 40px rgba(6,27,14,0.15)",
+          boxShadow: "0 20px 40px rgba(33,64,48,0.15)",
           marginBottom: "4rem",
         }}>
           <img src={dest.image} alt={dest.imageAlt}
@@ -169,7 +168,7 @@ function DestinationSection({ dest }) {
             loading="lazy" />
           <div style={{
             position: "absolute", inset: 0,
-            background: "linear-gradient(to top, rgba(6,27,14,0.2) 0%, transparent 55%)",
+            background: "linear-gradient(to top, rgba(33,64,48,0.2) 0%, transparent 55%)",
             pointerEvents: "none",
           }} />
           <GlassPanel title={dest.panelTitle} items={dest.panelItems} side={dest.panelSide} />
@@ -197,79 +196,10 @@ function DestinationSection({ dest }) {
   );
 }
 
-function Footer() {
-  return (
-    <footer style={{
-      background: tokens.primary, color: tokens.onPrimary,
-      padding: "7.5rem 0", borderTop: "1px solid rgba(255,255,255,0.05)",
-    }}>
-      <div style={{
-        maxWidth: 1280, margin: "0 auto",
-        padding: "0 clamp(20px, 5vw, 64px)",
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-        gap: "2rem",
-      }}>
-        {/* Brand */}
-        <div>
-          <div style={{
-            fontFamily: "'Playfair Display', serif", fontSize: 32,
-            fontWeight: 700, color: tokens.secondaryFixed, marginBottom: "1.5rem",
-          }}>Kare Kerala</div>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: tokens.outlineVariant, lineHeight: 1.6, marginBottom: "1.5rem" }}>
-            © 2024 Kare Kerala. All rights reserved. Journey into the heart of healing.
-          </p>
-          <div style={{ display: "flex", gap: "1rem" }}>
-            {["share", "mail"].map((icon) => (
-              <a key={icon} href="#" style={{
-                width: 40, height: 40, borderRadius: "50%",
-                background: "rgba(255,255,255,0.05)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                color: tokens.outlineVariant, textDecoration: "none",
-              }}>
-                <span className="material-symbols-outlined" style={{ fontSize: 20 }}>{icon}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Quick Links */}
-        <div>
-          <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase", color: tokens.secondaryFixed, marginBottom: "1.5rem" }}>
-            Quick Links
-          </h4>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "1rem" }}>
-            {["Healing Journeys", "Kerala Gallery", "Contact Support"].map((l) => (
-              <li key={l}>
-                <a href="#" style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: tokens.outlineVariant, textDecoration: "none" }}>{l}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Legal */}
-        <div>
-          <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase", color: tokens.secondaryFixed, marginBottom: "1.5rem" }}>
-            Legal
-          </h4>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "1rem" }}>
-            {["Privacy Policy", "Terms of Service"].map((l) => (
-              <li key={l}>
-                <a href="#" style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: tokens.outlineVariant, textDecoration: "none" }}>{l}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-      </div>
-    </footer>
-  );
-}
 
 /* ─────────────────────────── ROOT ─────────────────────────── */
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setMounted(true), 60);
@@ -287,92 +217,10 @@ export default function HeroSection() {
         *, *::before, *::after { box-sizing: border-box; }
         body { margin: 0; }
         input::placeholder { color: #737973; }
-        @media (max-width: 768px) {
-          .kk-nav { display: none !important; }
-          .kk-cta { display: none !important; }
-          .kk-burger { display: flex !important; }
-        }
-        @media (min-width: 769px) {
-          .kk-nav { display: flex !important; }
-          .kk-cta { display: flex !important; }
-          .kk-burger { display: none !important; }
-          .kk-mobile-menu { display: none !important; }
-        }
       `}</style>
 
+
       <div style={{ fontFamily: "'Inter', sans-serif", background: tokens.background, color: tokens.onSurface }}>
-
-        {/* ── NAVBAR ── */}
-        <header style={{
-          position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
-          background: "rgba(248,249,250,0.84)",
-          backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)",
-          borderBottom: "1px solid rgba(0,0,0,0.06)",
-          boxShadow: "0 1px 4px rgba(0,0,0,0.04)",
-        }}>
-          <div style={{
-            maxWidth: 1280, margin: "0 auto",
-            padding: "1rem clamp(20px, 5vw, 64px)",
-            display: "flex", alignItems: "center", justifyContent: "space-between",
-          }}>
-            <div style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 700,
-              color: tokens.primary, letterSpacing: "-0.01em",
-            }}>Kare Kerala</div>
-
-            {/* Desktop nav */}
-            <nav className="kk-nav" style={{ gap: "0.25rem", alignItems: "center" }}>
-              {NAV_LINKS.map((link) => {
-                const active = link === "Tourism";
-                return (
-                  <a key={link} href="#" style={{
-                    fontFamily: "'Inter', sans-serif", fontSize: 15, fontWeight: 500,
-                    color: active ? tokens.primary : tokens.onSurfaceVariant,
-                    textDecoration: "none",
-                    padding: "0.5rem 0.75rem",
-                    borderRadius: "0.375rem",
-                    borderBottom: active ? `2px solid ${tokens.primary}` : "2px solid transparent",
-                    transition: "color 0.15s",
-                    display: "block",
-                  }}>{link}</a>
-                );
-              })}
-            </nav>
-
-            <button className="kk-cta" style={{
-              fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 600,
-              letterSpacing: "0.05em", padding: "0.5rem 1.5rem",
-              borderRadius: 9999, border: `1px solid ${tokens.primary}`,
-              background: "transparent", color: tokens.primary, cursor: "pointer",
-            }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = tokens.primary; e.currentTarget.style.color = "#fff"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = tokens.primary; }}
-            >CONTACT US</button>
-
-            <button className="kk-burger" onClick={() => setMenuOpen(!menuOpen)}
-              style={{ background: "none", border: "none", cursor: "pointer", color: tokens.primary, alignItems: "center" }}>
-              <span className="material-symbols-outlined" style={{ fontSize: 30 }}>menu</span>
-            </button>
-          </div>
-
-          {/* Mobile menu */}
-          {menuOpen && (
-            <div className="kk-mobile-menu" style={{
-              background: tokens.surface, padding: "0.5rem clamp(20px, 5vw, 64px) 1rem",
-              borderTop: "1px solid rgba(0,0,0,0.06)",
-            }}>
-              {NAV_LINKS.map((link) => (
-                <a key={link} href="#" style={{
-                  display: "block", padding: "0.75rem 0",
-                  fontFamily: "'Inter', sans-serif", fontSize: 16, fontWeight: 500,
-                  color: link === "Tourism" ? tokens.primary : tokens.onSurfaceVariant,
-                  textDecoration: "none", borderBottom: "1px solid rgba(0,0,0,0.04)",
-                }}>{link}</a>
-              ))}
-            </div>
-          )}
-        </header>
 
         {/* ── HERO ── */}
         <section style={{
@@ -383,7 +231,7 @@ export default function HeroSection() {
           <div style={{ position: "absolute", inset: 0 }}>
             <img src={HERO_IMAGE} alt="Serene Kerala backwaters at sunrise"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-            <div style={{ position: "absolute", inset: 0, background: "rgba(6,27,14,0.40)", mixBlendMode: "multiply" }} />
+            <div style={{ position: "absolute", inset: 0, background: "rgba(33,64,48,0.40)", mixBlendMode: "multiply" }} />
             <div style={{ position: "absolute", inset: 0, background: `linear-gradient(to top, ${tokens.background} 0%, transparent 35%)` }} />
           </div>
 
@@ -402,7 +250,7 @@ export default function HeroSection() {
               fontWeight: 700, lineHeight: 1.1,
               letterSpacing: "-0.02em",
               marginBottom: "1.5rem", marginTop: 0,
-              textShadow: "0 2px 20px rgba(6,27,14,0.5)",
+              textShadow: "0 2px 20px rgba(33,64,48,0.5)",
             }}>Explore God's Own Country</h1>
             <p style={{
               fontFamily: "'Inter', sans-serif",
@@ -410,7 +258,7 @@ export default function HeroSection() {
               fontWeight: 400, lineHeight: 1.6,
               maxWidth: 680, margin: "0 auto",
               color: "rgba(255,255,255,0.88)",
-              textShadow: "0 1px 8px rgba(6,27,14,0.4)",
+              textShadow: "0 1px 8px rgba(33,64,48,0.4)",
             }}>
               Discover the soul of India through tranquil backwaters, lush tea
               gardens, and pristine beaches. A curated guide to your healing journey.
@@ -423,9 +271,8 @@ export default function HeroSection() {
           <DestinationSection key={dest.id} dest={dest} />
         ))}
 
-        {/* ── FOOTER ── */}
-        <Footer />
       </div>
     </>
   );
 }
+
