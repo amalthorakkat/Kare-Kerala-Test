@@ -191,7 +191,7 @@ const Services = () => {
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row gap-3 justify-center pt-10"
         >
-          <button className="px-6 cursor-pointer py-2.5 flex items-center justify-center gap-2 bg-[#1B6498] text-white rounded-[10px] hover:bg-[#134d77] transition font-medium shadow-sm hover:shadow-md w-full sm:w-auto">
+          <button className="px-6 cursor-pointer py-2.5 flex items-center justify-center gap-2 bg-[rgb(33,64,48)] text-white rounded-[10px] hover:bg-[rgb(25,50,38)] transition font-medium shadow-sm hover:shadow-md w-full sm:w-auto">
             Book an Appointment <AiOutlineArrowRight />
           </button>
         </motion.div>

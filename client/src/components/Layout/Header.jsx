@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import KareKeralaLogo from "../../assets/images/websiteLogo/KareKeralaLogo.svg";
 import { FiPhone, FiMenu, FiX } from "react-icons/fi";
 import { animateMenuToggle } from "../../animations/menuAnimations";
@@ -6,6 +7,7 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Refs
   const menuRef = useRef(null);
@@ -13,9 +15,16 @@ const Header = () => {
   const hamburgerRef = useRef(null);
   const closeRef = useRef(null);
 
-  const navLinks = ["Home", "About Us", "Services", "Why Kerala", "Doctors"];
+  const navLinks = ["Home", "About Us", "Services", "Why Kerala", "Doctors", "Tourism"];
 
   const handleNavClick = (linkName) => {
+    // Handle Tourism navigation separately
+    if (linkName === "Tourism") {
+      navigate("/tourism");
+      setIsMenuOpen(false);
+      return;
+    }
+
     const idMap = {
       Home: "home",
       "About Us": "about-us",
@@ -96,7 +105,7 @@ const Header = () => {
             <p
               key={link}
               onClick={() => handleNavClick(link)}
-              className="cursor-pointer hover:text-[#1B6498] transition-colors"
+              className="cursor-pointer hover:text-[rgb(33,64,48)] transition-colors"
             >
               {link}
             </p>
@@ -112,7 +121,7 @@ const Header = () => {
         >
           <button
             onClick={() => handleNavClick("Contact")}
-            className="uppercase cursor-pointer flex items-center gap-2 py-2.5 px-5 rounded-xl border-2 border-[#1B6498] text-[#1B6498] font-medium transition hover:bg-[#1B6498] hover:text-white"
+            className="uppercase cursor-pointer flex items-center gap-2 py-2.5 px-5 rounded-xl border-2 border-[rgb(33,64,48)] text-[rgb(33,64,48)] font-medium transition hover:bg-[rgb(33,64,48)] hover:text-white"
           >
             <FiPhone /> Contact Us
           </button>
@@ -125,7 +134,7 @@ const Header = () => {
           transition={{ duration: 0.5 }}
           ref={buttonRef}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="lg:hidden text-[#1B6498] relative w-[30px] h-[30px] flex items-center justify-center outline-none"
+          className="lg:hidden text-[rgb(33,64,48)] relative w-[30px] h-[30px] flex items-center justify-center outline-none"
         >
           {/* HAMBURGER: Starts visible (opacity 1), Rotation 0 */}
           <div
@@ -159,7 +168,7 @@ const Header = () => {
             {navLinks.map((link) => (
               <p
                 key={link}
-                className="cursor-pointer transition hover:text-[#1B6498]"
+                className="cursor-pointer transition hover:text-[rgb(33,64,48)]"
                 onClick={() => {
                   handleNavClick(link);
                   setIsMenuOpen(false);
@@ -173,7 +182,7 @@ const Header = () => {
                 handleNavClick("Contact");
                 setIsMenuOpen(false);
               }}
-              className="mt-4 uppercase flex items-center gap-2 py-3 px-7 rounded-xl border-2 border-[#1B6498] text-[#1B6498] font-medium transition hover:bg-[#1B6498] hover:text-white"
+              className="mt-4 uppercase flex items-center gap-2 py-3 px-7 rounded-xl border-2 border-[rgb(33,64,48)] text-[rgb(33,64,48)] font-medium transition hover:bg-[rgb(33,64,48)] hover:text-white"
             >
               <FiPhone /> Contact Us
             </button>

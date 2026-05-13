@@ -146,7 +146,7 @@ const AboutCarouselGSAP = () => {
 
         {/* --- DECORATIVE BORDER LINE --- */}
         <div
-          className="absolute z-10 rounded-full border border-[#1B6498]/30 pointer-events-none"
+          className="absolute z-10 rounded-full border border-[rgb(33,64,48)]/30 pointer-events-none"
           style={{
             width: `${borderWidth}px`,
             height: `${borderHeight}px`,

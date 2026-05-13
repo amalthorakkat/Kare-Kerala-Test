@@ -27,7 +27,7 @@ const AboutTextCarousel = () => {
       >
         <ScrollVelocityRow
           baseVelocity={1}
-          className="text-[#1B6498] font-medium tracking-wide sm:tracking-wider"
+          className="text-[rgb(33,64,48)] font-medium tracking-wide sm:tracking-wider"
         >
           <span
             className="
