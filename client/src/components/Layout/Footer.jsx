@@ -58,11 +58,6 @@ const Footer = () => {
               <img src={KareKeralaLogo} alt="Kare Kerala" className="w-28" />
             </div>
 
-            <p className="text-sm text-[#d5e6de] max-w-xs mx-auto sm:mx-0 leading-relaxed">
-              Your trusted partner for medical tourism and authentic Ayurvedic
-              treatments in Kerala, India.
-            </p>
-
             {/* Social Icons */}
             <div className="flex justify-center sm:justify-start gap-3 text-[#cfe9df]">
               {[FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn].map(
